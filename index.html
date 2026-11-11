@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>projecterestiveethernal</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050b16;--bg2:#0a1628;--card:rgba(120,190,255,.06);--line:rgba(160,215,255,.18);--tx:#e8f4ff;--mut:#8fa9c4;--ice:#7fd4ff;--ice2:#c9f0ff;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0}
+body{background:radial-gradient(ellipse at 50% -10%,#12335a 0%,var(--bg) 55%) fixed,var(--bg);color:var(--tx);font-family:Inter,system-ui,sans-serif;overflow-x:hidden;line-height:1.6}
+#snow{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+section,header,footer{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:80px 22px}
+nav{display:flex;justify-content:space-between;align-items:center;padding-bottom:0}
+.logo{font-family:Orbitron,sans-serif;font-weight:900;letter-spacing:.15em;color:var(--ice2)}
+.btn{display:inline-block;padding:14px 30px;border-radius:12px;font-weight:600;text-decoration:none;color:#031524;background:linear-gradient(135deg,#e8f8ff,#7fd4ff);box-shadow:0 0 30px rgba(127,212,255,.4);transition:.25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 0 50px rgba(127,212,255,.7)}
+.btn.ghost{background:transparent;color:var(--ice2);border:1px solid var(--line);box-shadow:none}
+.hero{text-align:center;padding-top:70px}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:7px 18px;font-size:13px;letter-spacing:.2em;color:var(--ice);backdrop-filter:blur(8px)}
+h1{font-family:Orbitron,Impact,sans-serif;font-weight:900;font-size:clamp(40px,10vw,112px);line-height:1.05;margin:26px 0 10px;letter-spacing:.04em;text-transform:uppercase;
+background:linear-gradient(180deg,#fff 0%,#dbe9f5 28%,#6f8296 48%,#e9f4ff 52%,#9fc4e4 75%,#fff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 24px rgba(127,212,255,.45));animation:shine 6s ease-in-out infinite;background-size:100% 200%}
+@keyframes shine{0%,100%{background-position:0 0}50%{background-position:0 40%}}
+.sub{color:var(--mut);font-size:clamp(16px,2.4vw,20px);max-width:620px;margin:0 auto 34px}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.count{display:flex;justify-content:center;gap:14px;margin-top:54px;flex-wrap:wrap}
+.count div{min-width:84px;padding:14px 10px;border:1px solid var(--line);border-radius:14px;background:var(--card);backdrop-filter:blur(10px)}
+.count b{display:block;font-family:Orbitron,sans-serif;font-size:30px;color:var(--ice2)}
+.count span{font-size:12px;color:var(--mut);letter-spacing:.15em;text-transform:uppercase}
+h2{font-family:Orbitron,sans-serif;font-size:clamp(26px,5vw,42px);text-align:center;margin-bottom:12px;background:linear-gradient(180deg,#fff,#8fc4e8);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.lead{text-align:center;color:var(--mut);margin-bottom:44px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{padding:26px;border:1px solid var(--line);border-radius:18px;background:var(--card);backdrop-filter:blur(10px);transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:var(--ice);box-shadow:0 10px 40px rgba(127,212,255,.15)}
+.card i{font-style:normal;font-size:28px}
+.card h3{font-family:Orbitron,sans-serif;font-size:17px;margin:12px 0 6px;color:var(--ice2)}
+.card p{color:var(--mut);font-size:15px}
+.menu{max-width:760px;margin:0 auto;border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,rgba(18,40,70,.85),rgba(6,14,28,.9));box-shadow:0 0 80px rgba(127,212,255,.18);overflow:hidden}
+.bar{display:flex;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);align-items:center}
+.bar s{width:10px;height:10px;border-radius:50%;background:var(--ice);opacity:.6;text-decoration:none}
+.bar em{margin-left:auto;font-family:Orbitron,sans-serif;font-size:12px;letter-spacing:.2em;color:var(--ice);font-style:normal}
+.body{display:grid;grid-template-columns:150px 1fr;min-height:260px}
+.side{padding:16px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--mut)}
+.side .on{color:#031524;background:var(--ice);border-radius:8px;padding:6px 10px;font-weight:600}
+.opts{padding:20px;display:flex;flex-direction:column;gap:16px}
+.row{display:flex;justify-content:space-between;align-items:center;font-size:15px}
+.tg{width:42px;height:22px;border-radius:99px;background:rgba(127,212,255,.15);position:relative;border:1px solid var(--line)}
+.tg::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--mut);transition:.25s}
+.tg.on{background:rgba(127,212,255,.5)}.tg.on::after{left:22px;background:#fff}
+.sl{width:140px;height:6px;border-radius:9px;background:linear-gradient(90deg,var(--ice) var(--v),rgba(127,212,255,.15) var(--v))}
+.price{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.plan{text-align:center;padding:32px 22px}
+.plan.hot{border-color:var(--ice);box-shadow:0 0 50px rgba(127,212,255,.25)}
+.plan b{display:block;font-family:Orbitron,sans-serif;font-size:36px;margin:10px 0;color:#fff}
+.plan p{margin-bottom:20px}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:50px 22px 60px;border-top:1px solid var(--line)}
+@media(max-width:560px){.body{grid-template-columns:1fr}.side{flex-direction:row;flex-wrap:wrap;border-right:0;border-bottom:1px solid var(--line)}.sl{width:90px}}
+@media(prefers-reduced-motion:reduce){h1{animation:none}}
+#rel{display:none;position:fixed;inset:0;z-index:5;background:rgba(5,11,22,.72);backdrop-filter:blur(6px);flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:env(safe-area-inset-top,0px) 22px env(safe-area-inset-bottom,0px)}
+#rel.on{display:flex;animation:fadein .5s}
+@keyframes fadein{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+#rel h2{font-size:clamp(34px,9vw,86px);margin:22px 0 28px;letter-spacing:.05em;filter:drop-shadow(0 4px 24px rgba(127,212,255,.5))}
+#rel .badge{margin-bottom:6px}
+</style>
+</head>
+<body>
+<canvas id="snow"></canvas>
+
+<header>
+<nav><div class="logo">❄ ETHERNALSNOW</div><a class="btn ghost" href="#release">Получить</a></nav>
+<div class="hero">
+<span class="badge">✦ 2027 IS COMING ✦</span>
+<h1>Ethernalsnow</h1>
+<p class="sub">Визуальный софт нового поколения. Чистая картинка, холодный стиль и максимум информации — всё в ледяном свете.</p>
+<div class="cta"><a class="btn" href="#release">Получить</a><a class="btn ghost" href="#features">Возможности</a></div>
+<div class="count" id="count"><div><b id="d">00</b><span>дней</span></div><div><b id="h">00</b><span>часов</span></div><div><b id="m">00</b><span>минут</span></div><div><b id="s">00</b><span>секунд</span></div></div>
+</div>
+</header>
+
+<section id="features">
+<h2>Визуалы</h2>
+<p class="lead">Всё, что нужно для идеальной картинки</p>
+<div class="grid">
+<div class="card"><i>🧊</i><h3>ESP</h3><p>Боксы, имена, здоровье и дистанция с гибкой настройкой стиля.</p></div>
+<div class="card"><i>🦴</i><h3>Skeleton</h3><p>Плавные линии скелета с градиентом в ледяной палитре.</p></div>
+<div class="card"><i>✨</i><h3>Chams и Glow</h3><p>Холодное свечение и заливка моделей с настройкой прозрачности.</p></div>
+<div class="card"><i>🎯</i><h3>Радар</h3><p>Компактный мини-радар с кастомным размером и позицией.</p></div>
+<div class="card"><i>🎨</i><h3>Темы</h3><p>Зимние пресеты: Frost, Aurora, Glacier и редактор своих цветов.</p></div>
+<div class="card"><i>⚡</i><h3>Оптимизация</h3><p>Лёгкий рендер без просадок FPS даже на слабых системах.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Меню</h2>
+<p class="lead">Интуитивное, стильное, твоё</p>
+<div class="menu">
+<div class="bar"><s></s><s></s><s></s><em>ETHERNALSNOW</em></div>
+<div class="body">
+<div class="side"><span class="on">Visuals</span><span>Colors</span><span>Radar</span><span>Config</span></div>
+<div class="opts">
+<div class="row">Player ESP<span class="tg on"></span></div>
+<div class="row">Skeleton<span class="tg on"></span></div>
+<div class="row">Glow<span class="tg"></span></div>
+<div class="row">Glow intensity<span class="sl" style="--v:68%"></span></div>
+<div class="row">Frost theme<span class="tg on"></span></div>
+</div></div></div>
+</section>
+
+<section id="price">
+<h2>Тарифы</h2>
+<p class="lead">Выбери срок — цены можно изменить под себя</p>
+<div class="price">
+<div class="card plan"><h3>7 дней</h3><b>5€</b><p>Попробовать</p><a class="btn ghost" href="#release">Получить</a></div>
+<div class="card plan hot"><h3>30 дней</h3><b>15€</b><p>Самый популярный</p><a class="btn" href="#release">Получить</a></div>
+<div class="card plan"><h3>Навсегда</h3><b>45€</b><p>Один раз и навсегда</p><a class="btn ghost" href="#release">Получить</a></div>
+</div>
+</section>
+
+<footer>© 2027 Ethernalsnow · Discord · Telegram · Поддержка</footer>
+
+<div id="rel"><span class="badge">❄ ETHERNALSNOW ❄</span><h2>Release 31.12.26</h2><a class="btn ghost" href="#">← Назад</a></div>
+<script>
+(function(){
+var c=document.getElementById('snow'),x=c.getContext('2d'),W,H,P=[];
+function rs(){W=c.width=innerWidth;H=c.height=innerHeight}
+rs();addEventListener('resize',rs);
+for(var i=0;i<120;i++)P.push({x:Math.random()*2000,y:Math.random()*1200,r:Math.random()*2.4+.6,s:Math.random()*.8+.3,d:Math.random()*Math.PI*2});
+function f(){x.clearRect(0,0,W,H);x.fillStyle='rgba(225,245,255,.85)';
+P.forEach(function(p){p.y+=p.s;p.d+=.01;p.x+=Math.sin(p.d)*.4;if(p.y>H){p.y=-5;p.x=Math.random()*W}if(p.x>W)p.x=0;
+x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);x.fill()});requestAnimationFrame(f)}
+f();
+var t=new Date(2027,0,1,0,0,0).getTime();
+function z(n){return n<10?'0'+n:''+n}
+function u(){var l=Math.max(0,t-Date.now());
+d.textContent=z(Math.floor(l/864e5));h.textContent=z(Math.floor(l/36e5)%24);m.textContent=z(Math.floor(l/6e4)%60);s.textContent=z(Math.floor(l/1e3)%60)}
+u();setInterval(u,1000);
+var r=document.getElementById('rel');
+function rt(){if(location.hash==='#release'){r.classList.add('on')}else{r.classList.remove('on')}}
+rt();addEventListener('hashchange',rt);
+})();
+</script>
+</body>
+</html>
